@@ -13,4 +13,4 @@
 
 3. 이미지
 
-<img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" width="100" height="100">
+<img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" width="500" height="500">

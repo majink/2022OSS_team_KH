@@ -64,6 +64,7 @@ int Updeate(s *s){
     scanf("%d", &s[count]->end[0]);
     printf("분(min) : ");
     scanf("%d", &s[count]->end[1]);
+    printf("예약이 완료 되었습니다!\n");
     return 1;
 
 }

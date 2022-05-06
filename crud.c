@@ -40,3 +40,32 @@ int Reservation(s *s, int count){
 int PrintList(s *s, int count){
     printf("예약 상황을 보여줄게요 !\n");
 }
+
+int Updeate(s *s){
+    getchar();
+    printf("이름을 입력해주세요! : ");
+    fgets(s[count]->name, 100, stdin);
+    s[count]->name[strlen(s[count]->name) -1]= '\0';
+    printf("학번을 입력해주세요! : ");
+    scanf("%d", &s[count]->id);
+    printf("사용 시작 시간을 입력해주세요!\n");
+    printf("시(hour) : ");
+    scanf("%d",&s[count]->start[0]);
+    printf("분(min) : ");
+    scanf("%d", &s[count]->start[1]);
+    printf("언제까지 사용하고 싶은지 시간을 입력해주세요!\n");
+    printf("시(hour) : ");
+    scanf("%d", &s[count]->end[0]);
+    printf("분(min) : ");
+    scanf("%d", &s[count]->end[1]);
+    return 1;
+
+}
+int selectNo(s *s, int count){
+	char serch[100];
+	int no;
+	PrintList(s, count);
+	getchar();
+	prinf("예약자 이름은?");
+        fgets(serch, 100, stdin);
+}

@@ -1,3 +1,5 @@
+# 2022OSS_team_KH
+
 ## about us 
 
 1. our topic
@@ -35,5 +37,7 @@ KH는 Key Hope의 약자로, 미약한 실력이지만, 희망의 열쇠를 놓�
 💪 KHJ: 김하진
 안녕하세요. 한동대학교 전산전자공학부 김하진 입니다. 
 저는 Create, Read 함수 구현을 중점으로 structure와 main 함수 구현을 하는 역할을 맡았습니다.
+
+
 
 

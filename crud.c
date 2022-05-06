@@ -37,8 +37,14 @@ int Reservation(s *s, int count){
     return 1;
 }
 
-int PrintList(s *s, int count){
+void PrintList(s *s, int count){
     printf("예약 상황을 보여줄게요 !\n");
+    printf("----------------------------------\n");
+    printf("번호  이름  사용시작  사용종료  방번호\n");i
+    for(int i=0;i<count;i++){
+        if(s[i]->id != -1) printf("%d %s %d:%d %d:%d %d", i+1, 
+        s[i]->name, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room);
+    }
 }
 
 int Updeate(s *s){

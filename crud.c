@@ -2,6 +2,7 @@
 #include <string.h>
 #include "crud.h"
 
+//메뉴 목록을 출력하기 위한 함수
 void menu(){
     printf("~~~~~~ 상상랩 대여 ~~~~~~~\n");
     printf("1. 상상랩을 예약하고 싶어요 !\n");
@@ -73,6 +74,6 @@ int selectNo(s *s, int count){
 	int no;
 	PrintList(s, count);
 	getchar();
-	prinf("예약자 이름은?");
+	prinf("예약자 이름은?"); 
         fgets(serch, 100, stdin);
 }

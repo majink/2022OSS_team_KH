@@ -10,14 +10,14 @@ void menu(){
     printf("3. 예약을 수정하고 싶어요 !\n");
     printf("4. 예약을 취소하고 싶어요 !\n");
 }
-
+//번호를 입력받기 위함 함수
 int input(){
     int num;
     printf("원하는 번호를 입력해주세요 : ");
     scanf("%d", &num);
     return num;
 }
-
+//예약하기 위한 함수
 int Reservation(s *s, int count){
     getchar();
     printf("이름을 입력해주세요! : ");

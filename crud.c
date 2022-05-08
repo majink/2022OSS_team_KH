@@ -37,7 +37,7 @@ int Reservation(s *s, int count){
     scanf("%d", &s[count]->end[1]);
     return 1;
 }
-
+//예약 목록을 보여주는 함수
 void PrintList(s *s, int count){
     printf("예약 상황을 보여줄게요 !\n");
     printf("----------------------------------\n");
@@ -47,7 +47,7 @@ void PrintList(s *s, int count){
         s[i]->name, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room);
     }
 }
-
+//예약 내용을 수정하는 함수
 int Updeate(s *s){
     getchar();
     printf("이름을 입력해주세요! : ");
@@ -69,6 +69,7 @@ int Updeate(s *s){
     return 1;
 
 }
+//번호 선택을 위한 함수
 int selectNo(s *s, int count){
 	char serch[100];
 	int no;

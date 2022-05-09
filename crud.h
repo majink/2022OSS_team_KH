@@ -2,7 +2,7 @@ typedef struct{
 char name[10];
 int id;
 int start[2];
-int last[2];
+int end[2];
 int room;
 } s[100];
 
@@ -14,7 +14,7 @@ int Update(s *s, int count);//수정하는 함수
 int Delete_r(s *s, int count);//삭제한는 함수
 void SaveData(s *s);//파일 저장 함수
 int loadData(s *s);//파일 읽는 함수
-
+void findnum(s *s, int count);
 int selectNo(s* s,int count);//수정 또는 삭제할 Data를 물어보는 함수
 int input();//입력한 메뉴 번호를 받는 함수
 

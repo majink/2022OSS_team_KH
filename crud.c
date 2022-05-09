@@ -41,7 +41,7 @@ int Reservation(s *s, int count){
 void PrintList(s *s, int count){
     printf("예약 상황을 보여줄게요 !\n");
     printf("----------------------------------\n");
-    printf("번호  이름  사용시작  사용종료  방번호\n");i
+    printf("번호  이름  사용시작  사용종료  방번호\n");
     for(int i=0;i<count;i++){
         if(s[i]->id != -1) printf("%d %s %d:%d %d:%d %d", i+1, 
         s[i]->name, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room);
@@ -119,5 +119,23 @@ int loadData(s *s){
 
 	return i;
 }
-
-
+//방 번호를 입력받아서 해당 방의 예약 여부를 확인하기 위한 함수
+void findnum(s *s, int count){    
+    int find;
+    int c=0;
+    printf("예약 여부를 확인하고 싶은 방의 번호를 입력해주세요 ! :");
+    scanf("%d",&find);
+    printf("예약 상황을 보여줄게요 !\n");
+    printf("---------------------------------------\n");
+    printf("번호  이름  사용시작  사용종료  방번호\n");
+    for(int i=0;i<count;i++){
+        if(find ==s[i]->room) {
+            printf("%d %s %d:%d %d:%d %d", i+1,
+        s[i]->name, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room);
+            c++;
+        }
+        else continue;
+    }
+    printf("\n총 %d개의 예약이 있습니다!\n",c);
+    if(c==0) printf("=> 검색된 예약이 없습니다!\n");
+}

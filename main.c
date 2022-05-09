@@ -30,12 +30,12 @@ while (1){
             continue;
               }
            else {
-            Updeate(s,no);
+            Update(s,no);
             printf("=>수정됨!\n");
            }          
         }
         else if (num== 4){
-          int no = selectDataNo(s,count);
+          int no = selectNo(s,count);
             if(no==0){
             printf("=> 예약자 명단에 없어 삭제가 취소되었습니다!\n");
             continue;
@@ -46,11 +46,11 @@ while (1){
            }   
         }
         else if(num == 5){
-          saveData(s, count);
+
+          SaveData(s, count);
         }
        else break;
     }
     printf("종료됨!\n");
     return 0;
-
 }

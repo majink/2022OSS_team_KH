@@ -86,7 +86,7 @@ int selectNo(s *s, int count){
 	else return -1;
 	}
 
-int Delete(s *s){
+int Delete_r(s *s,int count){
 	return s->start[0] = -1;
 
 	}
@@ -109,15 +109,7 @@ int loadData(s *s){
 	fscanf(fp, "%s", s[i].name);
 	if(feof(fp))break;
 	fscanf(fp, "%d", s[i].id);
-	fscanf(fp, "%d", s[i].start[0]);
-	fscanf(fp, "%d", s[i].start[1]);
-	fscanf(fp, "%d", s[i].last[0]);
-	fscanf(fp, "%d", s[i].last[1]);
-	fscanf(fp, "%d", s[i].room);
-	}
-	fclose(fp);
+	fscanf(fp, "%
 
-	return i;
-}
 
 

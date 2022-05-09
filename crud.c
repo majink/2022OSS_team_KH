@@ -69,12 +69,55 @@ int Updeate(s *s){
     return 1;
 
 }
-//번호 선택을 위한 함수
+//삭제, 수정할 예약 선택을 위한 함수
 int selectNo(s *s, int count){
-	char serch[100];
+	char search[100];
 	int no;
 	PrintList(s, count);
 	getchar();
 	prinf("예약자 이름은?"); 
-        fgets(serch, 100, stdin);
+        fgets(search, 100, stdin);
+	for(int i=0 ; i<count ; i++){
+	if(s[i].start[0]==-1)continue;
+	if(strstr(s[i].name,search)){
+	retrun i;
+	}
+	}
+	else return -1;
+	}
+
+int Delete(s *s){
+	return s->start[0] = -1;
+
+	}
+void saveData(s *s, int count){
+	FILE *fp;
+	fp = fopen("reservation.txt", "w");
+	for(int i=0; i<count ; i++){
+	if(s[i].start[0]==-1)continue;
+	fprintf(fp, "%s %d %d %d %d %d %d",s[i].name, s[i].id, s[i].start[0], s[i].start[1], s[i].last[0], s[i].last[1], s[i].room); 
+			}
+	fclose(fp);
+	printf("=>저장됨!\n)";
 }
+
+int loadData(s *s){
+	int i=0;
+	FILE *fp;
+	fp = fopen("reservation.txt", "r");
+	for(; i<100; i++){
+	fscanf(fp, "%s", s[i].name);
+	if(feof(fp))break;
+	fscanf(fp, "%d", s[i].id);
+	fscanf(fp, "%d", s[i].start[0]);
+	fscanf(fp, "%d", s[i].start[1]);
+	fscanf(fp, "%d", s[i].last[0]);
+	fscanf(fp, "%d", s[i].last[1]);
+	fscanf(fp, "%d", s[i].room);
+	}
+	fclose(fp);
+
+	return i;
+}
+
+

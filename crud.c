@@ -119,7 +119,8 @@ void SaveData(s *s, int count){
 	FILE *fp;
 	fp = fopen("reservation.txt", "w");
 	for(int i=0; i<count ; i++){
-	if(s[i]->start[0]==-1)continue;
+	if(s[i]->id==-1)continue;
+	else
 	fprintf(fp, "%s %d %d %d %d %d %d\n",s[i]->name, s[i]->id, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room); 
 			}
 	fclose(fp);

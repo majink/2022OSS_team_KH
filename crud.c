@@ -11,6 +11,7 @@ void menu(){
     printf("4. 예약을 취소하고 싶어요 !\n");
     printf("5. 예약 현황을 저장하고 싶어요 !\n");
     printf("6. 원하는 방의 예약 상황을 알고 싶어요 !\n"); 
+    printf("7. 원하는 시간의 예약 가능한 방을 알고 싶어요 !\n");
     printf("0. 프로그램을 종료할게요 !\n\n");
 }
 //번호를 입력받기 위함 함수
@@ -134,12 +135,12 @@ int loadData(s *s){
 	for(; i<100; i++){
 	fscanf(fp, "%s", s[i]->name);
 	if(feof(fp))break;
-	fscanf(fp, "%d", &s[i]->id);
-	fscanf(fp, "%d", &s[i]->start[0]);
-    fscanf(fp, "%d", &s[i]->start[1]);
-    fscanf(fp, "%d", &s[i]->end[0]);
-    fscanf(fp, "%d", &s[i]->end[1]);
-    fscanf(fp, "%d", &s[i]->room);
+	fscanf(fp, "%d ", &s[i]->id);
+	fscanf(fp, "%d ", &s[i]->start[0]);
+    fscanf(fp, "%d ", &s[i]->start[1]);
+    fscanf(fp, "%d ", &s[i]->end[0]);
+    fscanf(fp, "%d ", &s[i]->end[1]);
+    fscanf(fp, "%d ", &s[i]->room);
     }
     return 0;
 }
@@ -165,4 +166,51 @@ int findroom(s *s, int count){
     printf("\n총 %d개의 예약이 있습니다.\n\n\n",c);
     if(c==0) printf("=> 등록된 예약이 없음!\n\n");
     return 0;
+}
+int findtime(s *s, int count){//방번호를 입력받아서 예약 여부 목록을 보여주는 함수
+    int find_s[2];//입력하는 시작하려는 시간
+    int find_e[2];//입력하는 끝내려는 시간
+    
+    printf("원하시는 사용 시작 시간을 입력해주세요!\n");
+    printf("시(hour) : ");
+    scanf("%d",&find_s[0]);
+    printf("분(min) : ");
+    scanf("%d", &find_s[1]);
+    printf("언제까지 사용하고 싶은지 시간을 입력해주세요!\n");
+    printf("시(hour) : ");
+    scanf("%d", &find_e[0]);
+    printf("분(min) : ");
+    scanf("%d", &find_e[1]);
+
+    int a,b;
+    int r_num[10]={0};
+
+    if(find_s[0]<10)a=find_s[0]*1000+find_s[1];
+        else a=find_s[0]*100+find_s[1];
+    if(find_e[0]<10)b=find_e[0]*1000+find_e[1];
+        else b=find_e[0]*100+find_e[1];
+
+    int c,d;
+    for(int i=0 ; i<count ; i++){
+    
+        if(s[i]->start[0]<10)c=s[i]->start[0]*1000+s[i]->start[1];
+        else c=s[i]->start[0]*100+s[i]->start[1];
+
+        if(s[i]->end[0]<10)d=s[i]->end[0]*1000+s[i]->end[1];
+        else d=s[i]->end[0]*100+s[i]->end[1];
+
+        if((a==c || b==d) || (a<c && (b>d || c<b)) || (a>c && a<d)){
+        r_num[s[i]->room-1]=1;
+        }
+    }
+    int check=0;
+    for(int i=0 ; i<10 ; i++){
+        if(r_num[i]==0){
+            printf("%d번 ",i+1);
+        check++;
+        }
+    }
+    if(check==0)printf("입력하신 시간에 예약 가능한 방이 없습니다 ");
+    else printf("방에 예약가능합니다!");
+    printf("\n\n");
 }

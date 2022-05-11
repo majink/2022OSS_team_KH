@@ -11,7 +11,10 @@ void menu(){
     printf("4. 예약을 취소하고 싶어요 !\n");
     printf("5. 예약 현황을 저장하고 싶어요 !\n");
     printf("6. 원하는 방의 예약 상황을 알고 싶어요 !\n"); 
+<<<<<<< HEAD
     printf("7. 원하는 시간의 예약 가능한 방을 알고 싶어요 !\n");
+=======
+>>>>>>> 3757c81d16416fde3a9da132ec53a1bc6232a8a5
     printf("0. 프로그램을 종료할게요 !\n\n");
 }
 //번호를 입력받기 위함 함수
@@ -167,6 +170,7 @@ int findroom(s *s, int count){
     if(c==0) printf("=> 등록된 예약이 없음!\n\n");
     return 0;
 }
+<<<<<<< HEAD
 int findtime(s *s, int count){//방번호를 입력받아서 예약 여부 목록을 보여주는 함수
     int find_s[2];//입력하는 시작하려는 시간
     int find_e[2];//입력하는 끝내려는 시간
@@ -214,3 +218,29 @@ int findtime(s *s, int count){//방번호를 입력받아서 예약 여부 목�
     else printf("방에 예약가능합니다!");
     printf("\n\n");
 }
+=======
+
+int findroom(s *s, int count){
+    //char find[10];
+    int find;
+    int c=0;
+    printf("검색할 방 번호는 ? : ");
+    scanf("%d",&find);
+    printf("----------------------------------\n");
+    printf("번호  이름  사용시작  사용종료  방번호\n");
+    for(int i=0;i<count;i++){
+        if(s[i]->id!=-1){
+          if(find!=s[i]->room) continue;
+          else {
+            printf("%d  %s  %d:%d  %d:%d  %d\n", i+1, s[i]->name, s[i]->start[0], s[i]->start[1], s[i]->end[0], s[i]->end[1], s[i]->room);
+            c++;
+          }
+        }
+        else continue;
+    }
+    printf("\n총 %d개의 예약이 있습니다.\n\n\n",c);
+    if(c==0) printf("=> 등록된 예약이 없음!\n\n");
+    return 0;
+}
+
+>>>>>>> 3757c81d16416fde3a9da132ec53a1bc6232a8a5

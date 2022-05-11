@@ -8,7 +8,8 @@ int main(){
     if(count > 0)printf("=>파일 읽기 완료!\n\n");
     else printf("=>파일 없음!\n\n");
 
-    while (1){
+while (1){
+
     menu();
     printf("원하는 메뉴는? : ");
     num = input();
@@ -46,9 +47,11 @@ int main(){
         
     else if(num == 5) SaveData(s, count);
     else if(num == 6) findroom(s, count);
+
     else if(num == 7) findtime(s, count);
     else break;
   }
   printf("종료됨!\n");
   return 0;
 }
+

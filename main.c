@@ -47,7 +47,6 @@ while (1){
         
     else if(num == 5) SaveData(s, count);
     else if(num == 6) findroom(s, count);
-
     else if(num == 7) findtime(s, count);
     else break;
   }

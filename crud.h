@@ -17,8 +17,4 @@ int loadData(s *s);//파일 읽는 함수
 int selectNo(s* s,int count);//수정 또는 삭제할 Data를 물어보는 함수
 int input();//입력한 메뉴 번호를 받는 함수
 int findroom(s *s, int count);//방번호를 입력받아서 예약 여부 목록을 보여주는 함수
-<<<<<<< HEAD
 int findtime(s *s, int count);//시간을 입력받아서 예약 가능한 방을 보여주는 함수
-=======
-
->>>>>>> 3757c81d16416fde3a9da132ec53a1bc6232a8a5

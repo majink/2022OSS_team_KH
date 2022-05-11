@@ -7,7 +7,8 @@ int main(){
     count = loadData(s);
     if(count > 0)printf("=>파일 읽기 완료!\n\n");
     else printf("=>파일 없음!\n\n");
-while (1){
+
+    while (1){
     menu();
     printf("원하는 메뉴는? : ");
     num = input();

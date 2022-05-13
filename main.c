@@ -9,7 +9,6 @@ int main(){
     else printf("=>파일 없음!\n\n");
 
 while (1){
-
     menu();
     printf("원하는 메뉴는? : ");
     num = input();

@@ -167,7 +167,6 @@ int findroom(s *s, int count){
     if(c==0) printf("=> 등록된 예약이 없음!\n\n");
     return 0;
 }
-
 int findtime(s *s, int count){//방번호를 입력받아서 예약 여부 목록을 보여주는 함수
     int find_s[2];//입력하는 시작하려는 시간
     int find_e[2];//입력하는 끝내려는 시간
